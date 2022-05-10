@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap");
 
 :root {
-  --size: 80px;
+  --size: 100px;
 }
 
 * {
@@ -119,7 +119,7 @@ body {
 }
 
 .menus li {
-  animation: hideMenus 0.8s ease-in;
+  animation: hideMenus 0.5s ease-in;
   animation-fill-mode: both;
   animation-delay: calc(-0.2s * var(--i));
 }
@@ -129,7 +129,7 @@ body {
 }
 
 .active .menus li {
-  animation: showMenus 0.8s ease-out;
+  animation: showMenus 0.5s ease-out;
   animation-fill-mode: both;
   animation-delay: calc(0.2s * var(--i));
 }
