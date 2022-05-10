@@ -1,0 +1,93 @@
+:root {
+  --size: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-button {
+  width: var(--size);
+  height: var(--size);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  transition: all 0.3s;
+  transform-origin: center;
+}
+
+.bg,
+.button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition-timing-function: ease-out;
+}
+
+.bg {
+  transition: all 1s;
+}
+
+.button {
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button:hover {
+  transform: scale(1.1);
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 3%;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 0.3s;
+}
+
+.button::before {
+  transform: translateY(calc(-0.08 * var(--size)));
+}
+
+.button:after {
+  transform: translateY(calc(0.08 * var(--size)));
+}
+
+.button:hover::before {
+  transform: translateY(calc(0.1 * var(--size)));
+}
+
+.button:hover::after {
+  transform: translateY(calc(-0.1 * var(--size)));
+}
+
+.active .bg {
+  background-color: #ccc;
+  transform: scale(100);
+}
+
+.active .button::before {
+  transform: rotate(45deg);
+}
+
+.active .button:after {
+  transform: rotate(-45deg);
+}
