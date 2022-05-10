@@ -1,11 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap");
+
 :root {
   --size: 80px;
+  --bg-color: rgb(196, 196, 196);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "ZCOOL XiaoWei", serif;
 }
 
 .nav-button {
@@ -41,6 +45,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg-color);
 }
 
 .nav-button:hover {
@@ -53,7 +58,8 @@
   display: block;
   width: 30%;
   height: 3%;
-  background-color: #000;
+  background-color: var(--bg-color);
+  filter: invert(1);
   position: absolute;
   top: 0;
   left: 0;
@@ -80,7 +86,7 @@
 }
 
 .active .bg {
-  background-color: #ccc;
+  background-color: var(--bg-color);
   transform: scale(100);
 }
 
@@ -90,4 +96,54 @@
 
 .active .button:after {
   transform: rotate(-45deg);
+}
+
+.menus {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10rem;
+  display: none;
+  color: var(--bg-color);
+  filter: invert(1);
+}
+
+.menus li {
+  animation: hideMenus 1s ease-in;
+  animation-fill-mode: both;
+  animation-delay: calc(-0.2s * var(--i));
+}
+
+.active .menus {
+  display: block;
+}
+
+.active .menus li {
+  animation: showMenus 1s ease-out;
+  animation-fill-mode: both;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes showMenus {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hideMenus {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100px);
+  }
 }

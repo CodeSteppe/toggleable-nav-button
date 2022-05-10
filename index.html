@@ -14,11 +14,22 @@
     <div class="bg"></div>
     <button class="button"></button>
   </nav>
+  <ul class="menus">
+    <li style="--i:0">Products</li>
+    <li style="--i:1">News</li>
+    <li style="--i:2">About Us</li>
+    <li style="--i:3">Contact Us</li>
+    <li style="--i:4">Join Us</li>
+  </ul>
 
   <script>
     const button = document.querySelector(".button");
+    const menus = document.querySelector(".menus");
     button.addEventListener("click", e => {
       document.body.classList.toggle("active");
+      if (document.body.classList.contains('active')) {
+        menus.style.display = 'block';
+      }
     });
   </script>
 </body>
