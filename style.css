@@ -2,7 +2,7 @@
 
 :root {
   --size: 80px;
-  --bg-color: rgb(196, 196, 196);
+  --bg-color: #f0f2f7;
 }
 
 * {
@@ -10,6 +10,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "ZCOOL XiaoWei", serif;
+}
+
+body {
+  height: 100vh;
+  background: url(./bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .nav-button {
@@ -34,7 +41,12 @@
 }
 
 .bg {
-  transition: all 1s;
+  background-color: var(--bg-color);
+  transition: transform 0.8s;
+}
+
+.active .bg {
+  transform: scale(100);
 }
 
 .button {
@@ -56,8 +68,8 @@
 .button::after {
   content: "";
   display: block;
-  width: 30%;
-  height: 3%;
+  width: 40%;
+  height: 4%;
   background-color: var(--bg-color);
   filter: invert(1);
   position: absolute;
@@ -85,11 +97,6 @@
   transform: translateY(calc(-0.1 * var(--size)));
 }
 
-.active .bg {
-  background-color: var(--bg-color);
-  transform: scale(100);
-}
-
 .active .button::before {
   transform: rotate(45deg);
 }
@@ -100,18 +107,22 @@
 
 .menus {
   position: fixed;
-  top: 200px;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
+  margin: auto;
+  height: fit-content;
   text-align: center;
-  font-size: 10rem;
+  font-size: 6.6rem;
+  line-height: 8rem;
   display: none;
   color: var(--bg-color);
   filter: invert(1);
 }
 
 .menus li {
-  animation: hideMenus 1s ease-in;
+  animation: hideMenus 0.8s ease-in;
   animation-fill-mode: both;
   animation-delay: calc(-0.2s * var(--i));
 }
@@ -121,7 +132,7 @@
 }
 
 .active .menus li {
-  animation: showMenus 1s ease-out;
+  animation: showMenus 0.8s ease-out;
   animation-fill-mode: both;
   animation-delay: calc(0.2s * var(--i));
 }
