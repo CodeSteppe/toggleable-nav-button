@@ -40,7 +40,7 @@ body {
 }
 
 .bg {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
   transition: transform 1s;
 }
 
