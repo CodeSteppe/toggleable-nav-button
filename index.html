@@ -26,8 +26,12 @@
 
   <script>
     const button = document.querySelector('.button');
+    const menus = document.querySelector('.menus');
     button.addEventListener('click', e => {
       document.body.classList.toggle('active');
+      if (document.body.classList.contains('active')) {
+        menus.style.display = 'block';
+      }
     });
   </script>
 

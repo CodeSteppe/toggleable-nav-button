@@ -13,7 +13,7 @@
 
 body {
   height: 100vh;
-  background: url(./bg.jpg) no-repeat;
+  background: url("./bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -50,11 +50,8 @@ body {
 
 .button {
   cursor: pointer;
-  border: none;
   outline: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
 }
 
 .button::before,
@@ -112,6 +109,7 @@ body {
   text-align: center;
   font-size: 6.6rem;
   line-height: 8.8rem;
+  display: none;
 }
 
 .menus li {
@@ -126,19 +124,6 @@ body {
   animation-delay: calc(0.1s * var(--i));
 }
 
-@keyframes showMenus {
-  from {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-}
-
 @keyframes hideMenus {
   from {
     opacity: 1;
@@ -149,5 +134,18 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(100px);
+  }
+}
+
+@keyframes showMenus {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 }
